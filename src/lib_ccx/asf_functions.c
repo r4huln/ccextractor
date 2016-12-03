@@ -474,7 +474,7 @@ int asf_getmoredata(struct lib_ccx_ctx *ctx, struct demuxer_data **ppdata)
 					if(!memcmp(econtentpos+2, L"WM/VideoClosedCaptioning"
 								,DescriptorNameLength))
 					{
-						// This flag would be really usefull if it would be
+						// This flag would be really useful if it would be
 						// reliable - it isn't.
 						asf_data_container.VideoClosedCaptioningFlag = *((int32_t*)edescval);
 						dbg_print(CCX_DMT_PARSE, "Found WM/VideoClosedCaptioning flag: %d\n",
@@ -684,7 +684,7 @@ int asf_getmoredata(struct lib_ccx_ctx *ctx, struct demuxer_data **ppdata)
 			{
 				asf_data_container.PacketLength = asf_data_container.PacketSize;
 				// For multiple payloads we can get away without a given
-				// Packet Lenght as individual payload length are given
+				// Packet Length as individual payload length are given
 				if (asf_data_container.PacketLength == 0 && asf_data_container.MultiplePayloads == 0)
 					fatal(EXIT_NOT_CLASSIFIED, "No idea how long the data packet will be. Abort.\n");
 			}
@@ -1044,8 +1044,8 @@ int asf_getmoredata(struct lib_ccx_ctx *ctx, struct demuxer_data **ppdata)
 		dbg_print(CCX_DMT_PARSE, "Skip the rest: %d\n", (int)(asf_data_container.FileSize - asf_data_container.HeaderObjectSize - asf_data_container.DataObjectSize));
 		result = buffered_skip(ctx->demux_ctx, (int)(asf_data_container.FileSize - asf_data_container.HeaderObjectSize - asf_data_container.DataObjectSize));
 		ctx->demux_ctx->past += result;
-		// Don not set end_of_file (although it is true) as this would
-		// produce an premature end error.
+		// Do not set end_of_file (although it is true) as this would
+		// produce a premature end error.
 		//end_of_file=1;
 
 		// parsebuf is freed automatically when the program closes.
